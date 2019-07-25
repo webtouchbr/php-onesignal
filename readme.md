@@ -3,19 +3,26 @@ Classe facilitar o uso do OneSignal para Push Notifications com PHP
 
 ## Baixando o projeto
 
-Para usar esse projeto, basta baixar esse repositório em seu projeto e importar as classes em src/ ou usar o composer que é o mais indicado:
-
 ```
-composer require webtouchbr/php-onesignal:1.*
-```
-
-Caso seu projeto já possua um arquivo composer.json, você pode também adiciona-lo nas dependências require e rodar um composer install:
-```
-{
+    "repositories": [
+        {
+            "type":"package",
+            "package": {
+              "name": "webtouchbr/php-onesignal",
+              "version":"master",
+              "source": {
+                  "url": "https://github.com/webtouchbr/php-onesignal.git",
+                  "type": "git",
+                  "reference":"master"
+                }
+            }
+        }
+    ],
+    
     "require": {
-        "webtouchbr/php-onesignal": "1.*"
+        "webtouchbr/php-onesignal": "master",
+        ...
     }
-}
 ```
 
 ## Exemplos
