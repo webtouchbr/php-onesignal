@@ -70,10 +70,12 @@ class Notification {
     
     /**
     * Adicionar uma tag que irá receber a notificação
-    * @param $segment string
+    * @param $campo string
+    * @param $valor string
+    * @param $comparator string
     * @return Device
     */
-    public function addTag($campo, $valor) {
+    public function addTag($campo, $valor, $comparator='and') {
         $tag = [
             'field'     => 'tag',
             'key'       => $campo,
@@ -82,7 +84,7 @@ class Notification {
         ];
 		
         if (isset($this->campos['filters']) && count($this->campos['filters']) > 0)
-            $this->campos['filters'][] = ['operator' => 'OR']; 
+            $this->campos['filters'][] = ['operator' => $comparator]; 
         $this->campos['filters'][] = $tag;
 
         return $this;
@@ -140,6 +142,14 @@ class Notification {
             $this->campos['included_segments'] = ['All'];  
 
         return $this->curl->post('notifications', $this->campos);
+    }
+
+    /**
+    * Pega Informações da notificação
+    * @param $campos array;
+    */
+    public function getNotification($id) {
+        return $this->curl->getNotification($id, $this->appID);
     }
 
     /**

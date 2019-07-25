@@ -111,6 +111,26 @@ class CURL {
     /**
     * @access public
     * @param $url string
+    * @param $appID string
+    * @return json
+    */
+    public function getNotification($id, $appID) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications/{$id}?app_id={$appID}");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', "Authorization: Basic {$this->key}"));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        return json_decode($response);
+    }
+
+    /**
+    * @access public
+    * @param $url string
     * @param $dados array()
     * @return json
     */
