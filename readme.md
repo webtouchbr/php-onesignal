@@ -1,18 +1,6 @@
 # PHP - OneSignal
 Classe facilitar o uso do OneSignal para Push Notifications com PHP
 
-## Obtendo a Chave do Servidor
-
-Primeiro será necessário criar a conta no 
-[One Signal](https://onesignal.com)
-
-Após criar uma nova conta, crie um novo aplicativo, acesse o aplicativo, e escolha a opção App Settings. 
-![App Settings](http://carloswgama.com.br/onesignal/app_settings.jpg)
-
-Nela haverá a opção de baixar o ID do APP e a Key da REST API
-![Keys](http://carloswgama.com.br/onesignal/keys_ids.jpg)
-
-
 ## Baixando o projeto
 
 Para usar esse projeto, basta baixar esse repositório em seu projeto e importar as classes em src/ ou usar o composer que é o mais indicado:
