@@ -1,9 +1,9 @@
 {
-    "name": "carloswgama/php-onesignal",
+    "name": "webtouchbr/php-onesignal",
     "description": "Enviar Push Notification usando One Signal",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "master",
     "authors": [
         {
             "name": "Carlos W. Gama",
